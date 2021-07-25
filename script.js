@@ -24,7 +24,7 @@ btn.addEventListener('click', () => {
         localStorage.done = JSON.stringify(donelist)
     }
 })
-
+//
 
 // รับ enter
 input.addEventListener('keyup', (evnt) => {
