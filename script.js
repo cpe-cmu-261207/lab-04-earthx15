@@ -15,17 +15,20 @@ if (localStorage.getItem('done') === null) {
 }
 var d=[]
  d = JSON.parse(localStorage.getItem('done'))
-t.forEach(t => {
-    todolist.push(t)
-    addtodo(t)
-    localStorage.todo = JSON.stringify(todolist)
-});
 
-d.forEach(d => {
-    donelist.push(d)
-    adddone(d)
+ for (let index = 0; index < t.length; index++) {
+    todolist.push(t[index])
+    addtodo(t[index])
+    localStorage.todo = JSON.stringify(todolist) 
+ }
+
+for (let index = 0; index < d.length; index++) {
+    donelist.push(d[index])
+    adddone(d[index])
     localStorage.done = JSON.stringify(donelist)
-});
+    
+}
+
 
 // กดปุ่ม
 btn.addEventListener('click', () => {
@@ -39,7 +42,7 @@ btn.addEventListener('click', () => {
         localStorage.done = JSON.stringify(donelist)
     }
 })
-//
+
 
 // รับ enter
 input.addEventListener('keyup', (evnt) => {
@@ -73,7 +76,7 @@ function addtodo(textnow) {
         delbtn.style.visibility = "hidden"
     })
     //ตกแต่ง
-    divtesk.classList = 'px-8 shadow-inner shadow-2xl flex block p-3 my-1 justify-between items-center bg-blue rounded-md '
+    divtesk.classList = 'max-w-screen-md mx-96 flex block p-2 my-2 justify-between  rounded-md '
     divbtn.classList = 'space-x-20'
     text.innerText = textnow
     text.classList = 'text-3xl font-bold'
@@ -112,7 +115,7 @@ function adddone(textnow) {
     text.innerText = textnow
     text.classList = 'text-3xl'
     text.style.textDecoration = 'line-through'
-    divtesk.classList = 'items-center shadow-md flex p-3 justify-between bg-green-500 rounded-md mt-2'
+    divtesk.classList = 'max-w-screen-md mx-96 shadow-md flex p-2 justify-between bg-white rounded-md my-2'
     divtesk.append(text)
     DoneListDiv.append(divtesk)
 }
