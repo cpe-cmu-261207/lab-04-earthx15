@@ -1,9 +1,9 @@
 const input = document.querySelector('input')
 const btn = document.querySelector('#btn')
-const todolist = []
-const donelist = []
+let todolist = []
+let donelist = []
 // ดึงข้อมูลจากlocal 
-/* if (localStorage.todolist === null) { 
+if (localStorage.todolist === null) { 
     localStorage.setItem('todo', JSON.stringify(todolist)); }
 
 todolist = JSON.parse(localStorage.getItem('todo'))
@@ -11,7 +11,7 @@ todolist = JSON.parse(localStorage.getItem('todo'))
 if (localStorage.donelist === null) { 
     localStorage.setItem('done', JSON.stringify(donelist)); }
 
-donelist = JSON.parse(localStorage.getItem('done')) */
+donelist = JSON.parse(localStorage.getItem('done'))
 // กดปุ่ม
 btn.addEventListener('click', () => {
     if (input.value === '')
