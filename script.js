@@ -1,32 +1,33 @@
 const input = document.querySelector('input')
 const btn = document.querySelector('#btn')
-var todolist=[]
-var donelist=[]
+const btndell = document.querySelector('#btndel')
+var todolist = []
+var donelist = []
 // ดึงข้อมูลจากlocal 
 
 if (localStorage.getItem('todo') === null) {
     localStorage.setItem('todo', JSON.stringify([]));
 }
-var t= []
- t = JSON.parse(localStorage.getItem('todo'))
+var t = []
+t = JSON.parse(localStorage.getItem('todo'))
 
 if (localStorage.getItem('done') === null) {
     localStorage.setItem('done', JSON.stringify([]));
 }
-var d=[]
- d = JSON.parse(localStorage.getItem('done'))
+var d = []
+d = JSON.parse(localStorage.getItem('done'))
 
- for (let index = 0; index < t.length; index++) {
+for (let index = 0; index < t.length; index++) {
     todolist.push(t[index])
     addtodo(t[index])
-    localStorage.todo = JSON.stringify(todolist) 
- }
+    localStorage.todo = JSON.stringify(todolist)
+}
 
 for (let index = 0; index < d.length; index++) {
     donelist.push(d[index])
     adddone(d[index])
     localStorage.done = JSON.stringify(donelist)
-    
+
 }
 
 
@@ -41,6 +42,10 @@ btn.addEventListener('click', () => {
         localStorage.todo = JSON.stringify(todolist)
         localStorage.done = JSON.stringify(donelist)
     }
+})
+btndell.addEventListener('click', () => {
+    localStorage.clear();
+    location.reload();
 })
 
 
@@ -115,7 +120,7 @@ function adddone(textnow) {
     text.innerText = textnow
     text.classList = 'text-3xl text-white'
     text.style.textDecoration = 'line-through'
-    divtesk.classList = 'max-w-screen-md mx-96 shadow-md flex p-2 justify-between bg-blue-400 rounded-md my-2'
+    divtesk.classList = 'max-w-screen-md mx-96 shadow-md flex p-2 my-2 justify-between bg-blue-400 rounded-md '
     divtesk.append(text)
     DoneListDiv.append(divtesk)
 }
