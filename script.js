@@ -1,17 +1,32 @@
-let input = document.querySelector('input')
+const input = document.querySelector('input')
 const btn = document.querySelector('#btn')
-let todolist = []
-let donelist = []
+var todolist=[]
+var donelist=[]
 // ดึงข้อมูลจากlocal 
-if (localStorage.todolist === null) { 
-    localStorage.setItem('todo', JSON.stringify(todolist)); }
 
-todolist = JSON.parse(localStorage.getItem('todo'))
+if (localStorage.getItem('todo') === null) {
+    localStorage.setItem('todo', JSON.stringify([]));
+}
+var t= []
+ t = JSON.parse(localStorage.getItem('todo'))
 
-if (localStorage.donelist === null) { 
-    localStorage.setItem('done', JSON.stringify(donelist)); }
+if (localStorage.getItem('done') === null) {
+    localStorage.setItem('done', JSON.stringify([]));
+}
+var d=[]
+ d = JSON.parse(localStorage.getItem('done'))
+t.forEach(t => {
+    todolist.push(t)
+    addtodo(t)
+    localStorage.todo = JSON.stringify(todolist)
+});
 
-donelist = JSON.parse(localStorage.getItem('done'))
+d.forEach(d => {
+    donelist.push(d)
+    adddone(d)
+    localStorage.done = JSON.stringify(donelist)
+});
+
 // กดปุ่ม
 btn.addEventListener('click', () => {
     if (input.value === '')
