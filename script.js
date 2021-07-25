@@ -85,8 +85,8 @@ function addtodo(textnow) {
     divbtn.classList = 'space-x-4'
     text.innerText = textnow
     text.classList = 'text-3xl  text-gray-400'
-    donebtn.classList = 'button p-2 text-3xl font-semibold rounded-md bg-green-400'
-    delbtn.classList = 'button p-2 text-3xl font-semibold rounded-md bg-red-500'
+    donebtn.classList = 'button p-2 text-3xl  rounded-md bg-green-500 font-bold'
+    delbtn.classList = 'button p-2 text-3xl  rounded-md bg-red-500 font-bold'
     donebtn.innerText = 'Done'
     delbtn.innerText = 'Delete'
     //ซ่อนปุ่ม
