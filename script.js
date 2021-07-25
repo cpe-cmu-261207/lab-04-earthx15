@@ -1,4 +1,4 @@
-const input = document.querySelector('input')
+let input = document.querySelector('input')
 const btn = document.querySelector('#btn')
 let todolist = []
 let donelist = []
