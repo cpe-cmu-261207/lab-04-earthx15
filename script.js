@@ -76,10 +76,10 @@ function addtodo(textnow) {
         delbtn.style.visibility = "hidden"
     })
     //ตกแต่ง
-    divtesk.classList = 'max-w-screen-md mx-96 flex block p-2 my-2 justify-between  rounded-md '
-    divbtn.classList = 'space-x-20'
+    divtesk.classList = 'max-w-screen-md mx-96 flex block p-2 my-2 justify-between bg-blue-400 rounded-md '
+    divbtn.classList = 'space-x-4'
     text.innerText = textnow
-    text.classList = 'text-3xl font-bold'
+    text.classList = 'text-3xl font-bold text-white'
     donebtn.classList = 'button p-2 text-3xl font-semibold rounded-md bg-green-400'
     delbtn.classList = 'button p-2 text-3xl font-semibold rounded-md bg-red-500'
     donebtn.innerText = 'Done'
@@ -113,9 +113,9 @@ function adddone(textnow) {
     const text = document.createElement('p')
     const DoneListDiv = document.querySelector('#dlist')
     text.innerText = textnow
-    text.classList = 'text-3xl'
+    text.classList = 'text-3xl text-white'
     text.style.textDecoration = 'line-through'
-    divtesk.classList = 'max-w-screen-md mx-96 shadow-md flex p-2 justify-between bg-white rounded-md my-2'
+    divtesk.classList = 'max-w-screen-md mx-96 shadow-md flex p-2 justify-between bg-blue-400 rounded-md my-2'
     divtesk.append(text)
     DoneListDiv.append(divtesk)
 }
